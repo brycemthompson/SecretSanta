@@ -1,3 +1,9 @@
+/*
+    Secret Santa - small program where you can enter the player's names, and receive someone to give a gift
+    to for the holidays. ***THE GAME DOES NOT SAVE DATA SO PLEASE COMPLETE THE GAME IN A SINGLE RUN***
+    @author Bryce Thompson
+ */
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -16,7 +22,8 @@ public class SecretSanta
         do {
             System.out.println("Enter your name to receive the person you will give a gift to:");
             System.out.println("List of valid names:");
-            System.out.println("Connor, Jason, Bryce, Sam, Grace, Kenny");
+            for(int i = 0; i < people.size(); i++)
+                System.out.print(people.get(i) + " ");
 
             input = in.next();
             while (alreadyPlayed.contains(input.toLowerCase())) //Nobody can play twice
@@ -24,7 +31,8 @@ public class SecretSanta
                 System.out.println("You have already played. Please let someone else play.");
                 System.out.println("Enter your name to receive the person you will give a gift to:");
                 System.out.println("List of valid names:");
-                System.out.println("Connor, Jason, Bryce, Sam, Grace, Kenny");
+                for(int i = 0; i < people.size(); i++)
+                    System.out.print(people.get(i) + " ");
                 input = in.next();
             }
 
